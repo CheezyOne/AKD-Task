@@ -11,8 +11,10 @@ public class Sounds : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
     }
-    public static void PlaySound(int index)
+    public void PlaySound(int index)
     {
-
+        _audioSource.clip = _audioClips[index];
+        _audioSource.volume = _volumes[index];
+        _audioSource.Play();
     }
 }
